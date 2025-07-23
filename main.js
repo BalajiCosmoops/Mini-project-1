@@ -79,11 +79,10 @@ const sideIcon = sidebarDropDown.querySelector('i');
 sidebarDropDown.addEventListener('click', function () {
     if (sidebarMenu.style.display === "none") {
         sidebarMenu.style.display = "block";
-        sideIcon.classList.replace('fa-bars', 'fa-xmark');
     }
     else {
         sidebarMenu.style.display = "none";
-        sideIcon.classList.replace('fa-xmark', 'fa-bars');
+        
     }
 })
 //candle
@@ -163,3 +162,105 @@ bespokeButton.addEventListener('click', function () {
     }
 })
 
+//signature
+
+const signatureDropDownSide = document.getElementById('signature-DD');
+const signatureMenuSide = document.getElementById('signature-menu');
+const signatureButton = document.getElementById('signature-btn');
+signatureDropDownSide.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (signatureMenuSide.style.display === "none") {
+        signatureMenuSide.style.display = "block";
+        CandleMenuSide.style.display = "none";
+    }
+    else {
+        signatureMenuSide.style.display = "none";
+        CandleMenuSide.style.display = "block";
+    }
+})
+signatureButton.addEventListener('click', function () {
+    if (signatureMenuSide.style.display === "block") {
+        signatureMenuSide.style.display = "none";
+        CandleMenuSide.style.display = "block";
+    }
+    else {
+        signatureMenuSide.style.display = "block";
+        CandleMenuSide.style.display = "none";
+    }
+})
+
+//Find your accents
+const findDropDownSide = document.getElementById('Find-DD');
+const findMenuSide = document.getElementById('find-menu');
+const findButton = document.getElementById('find-btn');
+findDropDownSide.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (findMenuSide.style.display === "none") {
+        findMenuSide.style.display = "block";
+        CandleMenuSide.style.display = "none";
+    }
+    else {
+        findMenuSide.style.display = "none";
+        CandleMenuSide.style.display = "block";
+    }
+})
+findButton.addEventListener('click', function () {
+    if (findMenuSide.style.display === "block") {
+        findMenuSide.style.display = "none";
+        CandleMenuSide.style.display = "block";
+    }
+    else {
+        findMenuSide.style.display = "block";
+        CandleMenuSide.style.display = "none";
+    }
+})
+//refill your accents
+const refillDropDownSide = document.getElementById('refill-DD');
+const refillMenuSide = document.getElementById('refill-menu');
+const refillButton = document.getElementById('refill-btn');
+refillDropDownSide.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (refillMenuSide.style.display === "none") {
+        refillMenuSide.style.display = "block";
+        CandleMenuSide.style.display = "none";
+    }
+    else {
+        refillMenuSide.style.display = "none";
+        CandleMenuSide.style.display = "block";
+    }
+})
+refillButton.addEventListener('click', function () {
+    if (refillMenuSide.style.display === "block") {
+        refillMenuSide.style.display = "none";
+        CandleMenuSide.style.display = "block";
+    }
+    else {
+        refillMenuSide.style.display = "block";
+        CandleMenuSide.style.display = "none";
+    }
+})
+//browse your accents
+const browseDropDownSide = document.getElementById('browse-DD');
+const browseMenuSide = document.getElementById('browse-menu');
+const browseButton = document.getElementById('browse-btn');
+browseDropDownSide.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (refillMenuSide.style.display === "none") {
+        refillMenuSide.style.display = "block";
+        CandleMenuSide.style.display = "none";
+    }
+    else {
+        refillMenuSide.style.display = "none";
+        CandleMenuSide.style.display = "block";
+    }
+})
+refillButton.addEventListener('click', function () {
+    if (refillMenuSide.style.display === "block") {
+        refillMenuSide.style.display = "none";
+        CandleMenuSide.style.display = "block";
+    }
+    else {
+        refillMenuSide.style.display = "block";
+        CandleMenuSide.style.display = "none";
+    }
+})
