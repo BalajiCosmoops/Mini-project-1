@@ -1,0 +1,44 @@
+.snap-b2b-new-product-compare-price {
+  color: #737373;
+  text-decoration: line-through;
+}
+
+.snap-b2b-custom-dynamic-checkout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  z-index: 10;
+  opacity: 0.6;
+  display: block !important;
+}
+
+.snap-b2b-shimmer {
+  background: linear-gradient(90deg, #e0e0e0 25%, #bdbdbd, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: snap-b2b-shimmer 1s infinite;
+}
+
+@keyframes snap-b2b-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.snap-b2b-hide-registration-form-button-inner {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 16px;
+  background: #000;
+  color: white;
+  cursor: pointer;
+}

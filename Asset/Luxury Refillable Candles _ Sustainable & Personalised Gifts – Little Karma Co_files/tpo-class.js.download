@@ -1,0 +1,78 @@
+(function () {
+    class TpoModal extends HTMLElement {
+        overlay = document.createElement('div');
+        contentContainer = document.createElement('div');
+        closeModalButton = document.createElement('span');
+        constructor(children, oneTimeUse = true) {
+            super();
+            this.childrenElement = children;
+            this.oneTimeUse = oneTimeUse;
+            this.init();
+        }
+
+        connectedCallback() {
+            if (!this._isEventListenerAdded) {
+                window.addEventListener('click', (event) => {
+                    if (event.target === this.overlay) {
+                        if (this.oneTimeUse) this.remove()
+                        else this.close();
+                    }
+                });
+                this._isEventListenerAdded = true;
+            }
+        }
+
+        render() {
+            this.contentContainer.append(this.closeModalButton);
+            this.overlay.append(this.contentContainer);
+            this.append(this.overlay);
+            document.body.append(this);
+        }
+
+        init() {
+            this.initOverlay().initContentContainer().initCloseModalButton();
+        }
+
+        initOverlay() {
+            this.overlay.classList.add('tpo_modal-background');
+            this.overlay.style.display = 'none';
+            return this;
+        }
+
+        initContentContainer() {
+            this.contentContainer.classList.add('tpo_modal-container');
+            this.contentContainer.append(this.childrenElement);
+            return this;
+        }
+
+        initCloseModalButton() {
+            this.closeModalButton.classList.add('tpo_close-popup-button');
+            this.closeModalButton.innerHTML = '&times;';
+            this.closeModalButton.onclick = () => {
+                if (this.oneTimeUse) this.remove()
+                else this.close();
+            };
+            return this;
+        }
+
+        setModalWidth(width) {
+            this.contentContainer.style.width = `${width}px`;
+            return this;
+        }
+
+        setOverlayClass(className) {
+            this.overlay.classList.add(className);
+            return this;
+        }
+
+        close() {
+            this.overlay.style.display = 'none';
+        }
+
+        open() {
+            this.overlay.style.display = 'block';
+        }
+    }
+    window.customElements.define('tpo-modal', TpoModal);
+    window.TpoModal = TpoModal;
+})();
